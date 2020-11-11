@@ -1,0 +1,32 @@
+.total{
+  text-align: center;
+  margin: 0;
+  pading: 0;
+  font-size: 15px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.date{
+  max-width: 40px;
+}
+
+.inputwidth{
+  max-width: 70px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

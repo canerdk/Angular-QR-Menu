@@ -1,0 +1,49 @@
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" class="maxwidth">
+    <mat-label>Product Name</mat-label>
+    <input matInput placeholder="Placeholder" readonly value="{{product.Name}}">
+    <mat-icon matSuffix>fastfood</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="maxwidth">
+    <mat-label>Price</mat-label>
+    <input matInput placeholder="Placeholder" readonly value="{{product.Price}} {{product.Currency}}">
+    <mat-icon matSuffix>receipt</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="maxwidth">
+    <mat-label>Quantity</mat-label>
+    <input matInput placeholder="Placeholder" [(ngModel)]="product.Quantity" type="number" value="{{product.Quantity}}" (click)="quantity(product.Quantity)" min="1">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="maxwidth">
+    <mat-label>Note</mat-label>
+    <textarea matInput [(ngModel)]="note" placeholder="Whatever needed"></textarea>
+  </mat-form-field>
+
+  <div>
+    <div *ngFor="let p of product.Ingredient">
+      <div *ngIf="p.Ingredient.FreeOrNot === false">
+        <h3 class="bg-warning text-center"><b>Free</b></h3>
+        <div class="form-check h6">
+          <input class="form-check-input mb-1" value="{{p.Ingredient.Name}}"  checked  type="checkbox" (change)="checkValue(p, $event)"> {{p.Ingredient.Name}}
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let p of product.Ingredient">
+      <div *ngIf="p.Ingredient.FreeOrNot === true">
+        <h3 class="bg-warning text-center"><b>Extra</b></h3>
+        <div class="form-check h6">
+          <input class="form-check-input mb-1" value="{{p.Ingredient.Name}}"  type="checkbox" (change)="checkValue(p, $event)"> {{p.Ingredient.Name}} <span style="color: #f90f1b">({{p.Ingredient.Price}} {{product.Currency}})</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-list-item >
+    <div mat-line class="text-right"><b>Total:</b> {{total | number:'1.1-5'}} {{product.Currency}}</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-button color="primary" mat-dialog-close="true" (click)="addProduct(product)"  cdkFocusInitial>Add</button>
+</mat-dialog-actions>

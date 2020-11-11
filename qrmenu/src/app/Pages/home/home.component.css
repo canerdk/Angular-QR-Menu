@@ -1,0 +1,117 @@
+
+.container{
+  position: relative;
+}
+
+.mainhead{
+  height: 120px;
+  width: 100%;
+  background-color: #333333;
+  position: relative;
+}
+
+.bg-img{
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../../../../src/assets/images/bg.png');
+  background-size: cover;
+}
+
+.qrbtn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10vh;
+}
+
+button{
+  height: 50px;
+  width: 70%;
+  font-size: 17px;
+}
+
+.qrbtn1{
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainhead .headtext{
+  color: white;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+}
+
+.logo{
+  background-color: white;
+  height: 80px;
+  border-radius: 10px;
+  opacity: 80%;
+
+}
+
+.card{
+  margin-top: 70px;
+  height: 200px;
+  margin-bottom: 20px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-top{
+  max-height: 200px;
+}
+
+.social{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1b1e21;
+  text-align: center;
+  height: 50px;
+}
+
+a {
+  position: relative;
+  top: 5px;
+  margin: 5px;
+  size: 40px;
+  width: 40px;
+  color: white;
+  text-decoration: none;
+}
+
+.complogo{
+  padding-top: 10px;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoimg{
+  margin-left: 10%;
+  margin-right: 10%;
+  max-height: 170px;
+}
+
+.title{
+  position: absolute;
+  color: #ffba3b;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 5%;
+  left: 30%;
+  font-family: "Ubuntu Medium", "Times New Roman", serif;
+}
+

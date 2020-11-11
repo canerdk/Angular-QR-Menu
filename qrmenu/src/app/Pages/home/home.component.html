@@ -1,0 +1,48 @@
+<section class="bg-img">
+
+
+  <mat-grid-list cols="1" rowHeight="300px">
+    <mat-grid-tile>
+      <img class="logoimg" src="/assets/images/Aksular-Logo.png">
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <!--<div class="container">
+    <div class="slider">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let s of Sliders">
+          <ng-template carouselSlide>
+            <div class="card">
+              <img class="card-img-top" src="http://{{s.SliderURL}}">
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+      <div class="qrbtn mb-3" *ngFor="let m of Menus">
+        <button (click)="onClick(m)" class="btn btn-warning center">{{m.LanguageCode}} Menu <span
+          class="fa fa-qrcode"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>-->
+
+  <div class="container" *ngFor="let m of Menus">
+    <div class="qrbtn">
+      <button mat-raised-button color="warn" (click)="onClick(m)"> Menu <span
+        class="fa fa-qrcode"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="social">
+    <a href="https://aksularpalmersgreen.com/" target="_blank" class="material-icons"><mat-icon>language</mat-icon></a>
+    <a href="https://goo.gl/maps/gGyxHo5NyYPqX6J18" target="_blank" class="material-icons"><mat-icon>location_on</mat-icon></a>
+    <a href="tel:+02088863503" target="_blank" class="material-icons"><mat-icon>call</mat-icon></a>
+    <a (click)="showToast()" [cdkCopyToClipboard]="shareLink" class="material-icons"><mat-icon>share</mat-icon></a>
+  </div>
+
+
+</section>

@@ -1,0 +1,48 @@
+.product{
+
+}
+.card-image{
+  left: 0;
+  top: 0;
+  position: absolute;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.proName{
+  margin-left: 120px;
+  font-weight: 500;
+}
+
+.procard{
+  height: 112px;
+}
+
+.price{
+  margin-left: 50%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.search{
+  width: 100%;
+}
+
+.space{
+  height: 50px;
+}
+
+.footer{
+  position: fixed;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.delete{
+  display: flex;
+  position: relative;
+}

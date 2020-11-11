@@ -1,0 +1,84 @@
+<section class="product">
+  <div>
+    <mat-toolbar color="primary" class="mb-3">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>qr_code</mat-icon>
+      </button>
+      <span>QR Menu</span>
+      <span class="example-spacer"></span>
+<!--      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>home</mat-icon>
+      </button>-->
+    </mat-toolbar>
+  </div>
+
+  <div class="container">
+    <mat-form-field class="search" appearance="legacy">
+      <mat-label>Search..</mat-label>
+      <input [(ngModel)]="searchText" matInput placeholder="">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let p of Product | filter: searchText">
+        <mat-card class="mb-3 procard" >
+          <img mat-card-md-image class="card-image" src="assets/images/imageprepare.png" alt="{{p.Name}}">
+
+          <mat-card-content>
+            <p class="proName">{{p.Name}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="float-right" mat-raised-button color="warn" (click)="addTask(p)">
+              <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+            <button class="float-right" mat-stroked-button color="primary">{{p.Price}} {{p.Currency}}</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+  <div class="space"></div>
+
+  <footer class="footer">
+    <mat-toolbar>
+
+      <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon"
+              aria-label="Example icon-button with share icon" matBadge="{{tasks.length}}" matBadgePosition="above"
+              matBadgeColor="accent">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <mat-card class="example-card mb-2" *ngFor="let c of tasks">
+          <mat-card-content>
+            <div class="container">
+              <div class="row">
+                <div class="col-9">
+                  <p>{{c.Quantity}}x {{c.Name}}</p>
+                </div>
+                <div class="col-3">
+                  <a class="delete"  (click)="deleteTask(c)">
+                    <mat-icon>delete</mat-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <div>
+          <a routerLink="/cart" class="mt-2 btn-block" mat-raised-button color="warn">Give Order
+            <mat-icon>add_shopping_cart</mat-icon>
+          </a>
+        </div>
+
+
+      </mat-menu>
+    </mat-toolbar>
+  </footer>
+
+</section>
+
+

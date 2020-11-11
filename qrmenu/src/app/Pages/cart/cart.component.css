@@ -1,0 +1,83 @@
+.product{
+  background-color: #e1e7ee;
+  background-size: cover;
+  height: 100vh;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.btn-cart{
+  width: 48%;
+}
+
+mat-form-field{
+  width: 40px;
+}
+
+mat-radio-button{
+  margin-right: 10%;
+
+}
+
+.payment{
+  margin: auto;
+  text-align: center;
+}
+
+/*Payment methods*/
+
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: block;
+  align-items: center;
+  justify-items: center;
+  text-decoration: none;
+}
+
+li:hover {
+  background-color: lightblue;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-selector {
+  display: flex;
+  justify-content: center;
+}
+
+
+.list-container {
+  width: 100%;
+}
+
+.list-container img {
+  margin: 0 30px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+

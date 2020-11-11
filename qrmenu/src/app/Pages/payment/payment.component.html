@@ -1,0 +1,95 @@
+<section class="payment">
+  <div>
+    <mat-toolbar color="primary" class="mb-3">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>payment</mat-icon>
+      </button>
+      <span>Payment</span>
+      <span class="example-spacer"></span>
+      <button routerLink="{{home}}" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+
+  <div class="container">
+    <h2 class="text-center">Order Summary</h2>
+    <table class="table table-hover">
+      <thead>
+      <tr class="text-center">
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let p of Product">
+      <tr class="text-center">
+        <td>{{p.Name}}</td>
+        <td>{{p.Quantity}}</td>
+        <td>{{p.Price}} {{p.Currency}}</td>
+        <td class="text-right">{{p.TotalPrice | number:'1.1-5'}} {{p.Currency}} </td>
+      </tr>
+
+      </tbody>
+      <tfoot >
+      <tr>
+        <td class="text-right" colspan="4">Cart Total: <b>{{totalPrice | number:'1.1-5'}}</b> {{currency}}</td>
+      </tr>
+      </tfoot>
+    </table>
+    <div class="alert alert-warning" role="alert">
+      <p class="total">Total Payment: {{totalPrice | number:'1.1-5'}} {{currency}}</p>
+    </div>
+<!--    mastercard - visa - cash-->
+    <!--<div class="container" *ngIf="selectedData !== 'cash'">
+      <div class="row">
+        <div class="col-12">
+          <mat-card>
+            <mat-card-content>
+              <form class="example-form">
+                <table class="example-full-width"  cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Kart sahibi</mat-label>
+                    <input matInput>
+                  </mat-form-field></td>
+                </tr></table>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Kart Numarası</mat-label>
+                    <input matInput #cardNo type="tel" inputmode="numeric"  pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" >
+                    <mat-hint align="end">{{cardNo.value.length}} / 19</mat-hint>
+                  </mat-form-field></td>
+                </tr></table>
+
+
+                <table><tr>
+                  <td><mat-form-field class="date">
+                    <mat-label>Ay</mat-label>
+                    <input maxlength="2" matInput placeholder="00">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="date">
+                    <mat-label>Yıl</mat-label>
+                    <input maxlength="2" matInput placeholder="00">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="inputwidth">
+                    <mat-label>CVV</mat-label>
+                    <input matInput #postalCode maxlength="3" placeholder="CVV">
+                    <mat-hint align="end">{{postalCode.value.length}} / 3</mat-hint>
+                  </mat-form-field></td>
+                </tr></table>
+              </form>
+            </mat-card-content>
+
+          </mat-card>
+        </div>
+      </div>
+    </div>-->
+
+
+    <div>
+      <button class="btn-block mt-3" mat-raised-button color="primary" *ngIf="totalPrice !== 0" (click)="pay()">Confirm</button>
+    </div>
+  </div>
+</section>

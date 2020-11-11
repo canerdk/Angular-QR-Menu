@@ -1,0 +1,32 @@
+<section class="category">
+  <div *ngFor="let c of Menus">
+    <div>
+    <mat-toolbar color="primary" class="mb-3">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>qr_code</mat-icon>
+      </button>
+      <span>Categories</span>
+      <span class="example-spacer"></span>
+
+    </mat-toolbar>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6" *ngFor="let p of c.Category | orderBy: 'Priority'">
+      <mat-card class="example-card mb-4"  (click)="getProduct(p)">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-5"></div>
+            <div class="col-7">
+              <h5 class="catName">{{p.Name}}</h5>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+  </div>
+
+</section>
